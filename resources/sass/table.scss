@@ -1,0 +1,84 @@
+@mixin  tableBtns() {
+  .table-btn-row{
+
+      .table-btn{
+          @include glassmorphic(0);
+          text-align: center;
+          transform:scaleY(1);
+          padding: .5rem 1.3rem .5rem 1.3rem;
+          color:#f6f5f5;
+          &:hover{
+              text-decoration:none!important;
+              background: rgba(18, 21, 25, 0.796);
+          }
+      }    
+      .edit-btn{ background: rgba(6, 80, 184, 0.6); border-radius:20px 0 0 20px; }
+      .delete-btn{ background: rgba(228, 68, 5, 0.6); border-radius:0 20px 20px 0;  }
+  }
+}
+
+
+/* Include CSS Normalize */
+@mixin importedTable(){
+$primary-color: #008cba;
+$gray-color: #ddd;
+$medium-up: 600px;
+$large-up: 1000px;
+$global-radius: 4px;
+
+
+
+main {
+  padding: 2em;  
+  float: left;
+  width: 100%;
+}
+
+
+
+
+///BASIC TABLE STYLING
+table {
+  @include glassmorphic(10px);
+  @include tableBtns();
+	border-collapse: collapse;
+	width: 100%;
+	float: left;
+   margin: 0 0 2em;
+   padding:20px 20px 20px 20px !important;
+	thead {
+    border-bottom: 3px solid $primary-color;
+    background:linear-gradient(to bottom right, #00000092, #6f4a8e);
+    color:honeydew;
+		th {
+			padding: 0.35em 0 .35em;
+       font-weight: 400;
+			text-align: left;
+			font-size: 1.25em;padding:1rem 1.3rem 1rem 1.3rem;
+		}
+		
+	}
+
+	tbody {
+		border-bottom: 3px solid $primary-color;
+		tr {
+			border-bottom: 2px solid #ddd;padding:1rem 1.3rem 1rem 1.3rem;font-weight:800;
+       
+			td {
+				padding: .75em 0;padding:1rem 1.3rem 1rem 1.3rem;columns: #000000; img{border-radius:40%;}
+				}
+			}
+		}
+	}
+
+	tfoot {
+		td {
+			padding: 0.35em 0 .35em;
+			text-align: left;
+      font-size: 1.25em;
+      
+		}
+	}
+
+
+}
